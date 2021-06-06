@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnicoAPI", "DesafioTecnicoAPI\DesafioTecnicoAPI.csproj", "{66612757-CB72-44A9-8ADB-46E41FD86D86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnico.Data", "DesafioTecnico.Data\DesafioTecnico.Data.csproj", "{66AE21B3-9190-4576-BFB3-96BDFD3E7528}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66612757-CB72-44A9-8ADB-46E41FD86D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66612757-CB72-44A9-8ADB-46E41FD86D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66612757-CB72-44A9-8ADB-46E41FD86D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66612757-CB72-44A9-8ADB-46E41FD86D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF13E4C6-3034-4DB3-A640-18411C6D8297}
+	EndGlobalSection
+EndGlobal
