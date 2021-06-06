@@ -1,4 +1,5 @@
-﻿using DesafioTecnicoAPI.Models;
+﻿using DesafioTecnico.Data.Models;
+using DesafioTecnicoAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioTecnico.Data.Models
+namespace DesafioTecnico.Data.Repositories
 {
     public class PessoaContext : DbContext
     {

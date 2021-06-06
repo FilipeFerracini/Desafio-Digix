@@ -17,7 +17,7 @@ namespace DesafioTecnicoAPI.Models
         //public int? RendaId { get; set; }
 
         //Navigation
-        public virtual Renda Valor { get; set; }
+        public virtual Renda ValorRenda { get; set; }
         public int? FamiliaId { get; set; }
         //public virtual Familia Familia { get; set; }
     }

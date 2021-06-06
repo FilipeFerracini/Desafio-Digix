@@ -8,8 +8,8 @@ namespace DesafioTecnico.Data.Models
 {
     public enum TipoPessoa : int
     {
-        Pretendente,
-        Cônjuge,
-        Dependente
+        Pretendente=0,
+        Cônjuge=1,
+        Dependente=2
     }
 }

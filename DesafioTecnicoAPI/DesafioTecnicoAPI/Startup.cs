@@ -1,6 +1,7 @@
 using DesafioTecnico.Data.Interfaces;
 using DesafioTecnico.Data.Models;
 using DesafioTecnico.Data.Repositories;
+using DesafioTecnico.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,8 +31,9 @@ namespace DesafioTecnicoAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IPessoaAppService, PessoaDatabase>();
+            services.AddTransient<IPessoaAppService, PessoaAppService>();
             services.AddTransient<IFamiliaAppService, FamiliaAppService>();
+            services.AddTransient<IAvaliacaoFamiliarAppService, AvaliacaoFamiliarAppService>();
             //services.AddTransient(typeof(IFamiliaAppService), typeof(FamiliaAppService));
             services.AddControllers();
 

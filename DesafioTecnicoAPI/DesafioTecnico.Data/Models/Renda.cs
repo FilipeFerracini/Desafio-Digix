@@ -14,6 +14,6 @@ namespace DesafioTecnico.Data.Models
         //public int Id { get; set; }
         [ForeignKey("PessoaId")]
         public virtual int PessoaId { get; set; }
-        public double Valor { get; set; }
+        public double ValorRenda { get; set; }
     }
 }

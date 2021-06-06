@@ -1,5 +1,6 @@
 ﻿using DesafioTecnico.Data.Interfaces;
 using DesafioTecnico.Data.Models;
+using DesafioTecnico.Data.Repositories;
 using DesafioTecnicoAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioTecnico.Data.Repositories
+namespace DesafioTecnico.Data.Services
 {
-    public class PessoaDatabase : IPessoaAppService
+    public class PessoaAppService : IPessoaAppService
     {
         private PessoaContext database;
 
-        public PessoaDatabase(PessoaContext _database)
+        public PessoaAppService(PessoaContext _database)
         {
             this.database = _database;
         }
@@ -39,19 +40,19 @@ namespace DesafioTecnico.Data.Repositories
         public Pessoa AdicionaRenda(int id, Renda renda)
         {
             Pessoa pessoa = BuscaPessoa(id);
-            pessoa.Valor = renda;
+            pessoa.ValorRenda = renda;
             database.SaveChanges();
             return pessoa;
         }
 
         public Pessoa BuscaPessoa(int id)
         {
-            return database.Pessoa.Include(x => x.Valor).FirstOrDefault(x => x.Id == id);
+            return database.Pessoa.Include(x => x.ValorRenda).FirstOrDefault(x => x.Id == id);
         }
 
         public List<Pessoa> BuscaTodasPessoas()
         {
-            return database.Pessoa.Include(x => x.Valor).ToList();
+            return database.Pessoa.Include(x => x.ValorRenda).ToList();
         }
 
         public bool RemovePessoa(int id)

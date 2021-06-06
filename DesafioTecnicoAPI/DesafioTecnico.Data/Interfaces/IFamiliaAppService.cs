@@ -13,5 +13,6 @@ namespace DesafioTecnico.Data.Interfaces
         Familia BuscarFamilia(int id);
         List<Familia> BuscarTodasFamilias();
         bool AdicionarPessoaFamilia(int idPessoa, int idFamilia);
+        bool AlterarStatusFamilia(int id, int novoStatus);
     }
 }
