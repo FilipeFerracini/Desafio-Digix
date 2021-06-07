@@ -19,16 +19,24 @@ namespace DesafioTecnicoAPI.Controllers {
 
         [HttpGet("ListaFamilias")]
         public ActionResult<List<Familia>> BuscarTodasFamilias() {
-            return familias.BuscarTodasFamilias();
+            try {
+                return familias.BuscarTodasFamilias();
+            } catch (Exception e) {
+                return BadRequest();
+            }
         }
 
         [HttpPost("BuscarFamilia")]
         public ActionResult<Familia> BuscarFamilia(int id) {
-            var familia = familias.BuscarFamilia(id);
-            if (familia == null)
-                return NotFound();
+            try {
+                var familia = familias.BuscarFamilia(id);
+                if (familia == null)
+                    return NotFound();
 
-            return familia;
+                return familia;
+            } catch (Exception e) {
+                return BadRequest();
+            }
         }
 
         [HttpPost("AdicionarFamilia")]
@@ -44,11 +52,15 @@ namespace DesafioTecnicoAPI.Controllers {
 
         [HttpPost("AdicionarPessoaFamilia")]
         public string AdicionarPessoaFamilia(int idPessoa, int idFamilia) {
-            var retorno = familias.AdicionarPessoaFamilia(idPessoa, idFamilia);
-            if (retorno)
-                return "Pessoa adicionada à família com sucesso";
+            try {
+                var retorno = familias.AdicionarPessoaFamilia(idPessoa, idFamilia);
+                if (retorno)
+                    return "Pessoa adicionada à família com sucesso";
 
-            return "Ocorreu um erro ao adicionar a Pessoa à família";
+                return "Ocorreu um erro ao adicionar a Pessoa à família";
+            } catch (Exception e) {
+                return "Ocorreu algum erro";
+            }
         }
 
         [HttpPost("AlterarStatusFamilia")]

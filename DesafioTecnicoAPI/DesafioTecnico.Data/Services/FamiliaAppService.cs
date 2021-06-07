@@ -32,52 +32,68 @@ namespace DesafioTecnico.Data.Services {
         }
 
         public bool AdicionarPessoaFamilia(int idPessoa, int idFamilia) {
-            var familia = BuscarFamilia(idFamilia);
-            var pessoa = pessoaAppService.BuscaPessoa(idPessoa);
+            try {
+                var familia = BuscarFamilia(idFamilia);
+                var pessoa = pessoaAppService.BuscarPessoa(idPessoa);
 
-            if (familia != null) {
-                familia.AdicionarPessoa(pessoa);
-                database.SaveChanges();
-                return true;
+                if (familia != null) {
+                    familia.AdicionarPessoa(pessoa);
+                    database.SaveChanges();
+                    return true;
+                }
+                return false;
+            } catch (Exception e) {
+                throw e;
             }
-            return false;
         }
 
         public Familia BuscarFamilia(int id) {
-            return database.Familia
-                .Include(f => f.Pessoas)
-                .ThenInclude(p => p.ValorRenda)
-                .FirstOrDefault(x => x.Id == id);
+            try {
+                return database.Familia
+                    .Include(f => f.Pessoas)
+                    .ThenInclude(p => p.ValorRenda)
+                    .FirstOrDefault(x => x.Id == id);
+            } catch (Exception e) {
+                throw e;
+            }
         }
 
         public List<Familia> BuscarTodasFamilias() {
-            return database.Familia
-                .Include(f => f.Pessoas)
-                .ThenInclude(p => p.ValorRenda)
-                .ToList();
+            try {
+                return database.Familia
+                    .Include(f => f.Pessoas)
+                    .ThenInclude(p => p.ValorRenda)
+                    .ToList();
+            } catch (Exception e) {
+                throw e;
+            }
         }
 
         public bool AlterarStatusFamilia(int id, int novoStatus) {
-            var familia = BuscarFamilia(id);
-            if (familia == null)
-                return false;
+            try {
+                var familia = BuscarFamilia(id);
+                if (familia == null)
+                    return false;
 
-            switch (novoStatus) {
-                case 0:
-                    familia.Status = StatusFamilia.Cadastro_valido;
-                    break;
-                case 1:
-                    familia.Status = StatusFamilia.Ja_possui_uma_casa;
-                    break;
-                case 2:
-                    familia.Status = StatusFamilia.Selecionada_em_outro_processo_de_selecao;
-                    break;
-                case 3:
-                    familia.Status = StatusFamilia.Cadastro_incompleto;
-                    break;
+                switch (novoStatus) {
+                    case 0:
+                        familia.Status = StatusFamilia.Cadastro_valido;
+                        break;
+                    case 1:
+                        familia.Status = StatusFamilia.Ja_possui_uma_casa;
+                        break;
+                    case 2:
+                        familia.Status = StatusFamilia.Selecionada_em_outro_processo_de_selecao;
+                        break;
+                    case 3:
+                        familia.Status = StatusFamilia.Cadastro_incompleto;
+                        break;
+                }
+                database.SaveChanges();
+                return true;
+            } catch (Exception e) {
+                throw e;
             }
-            database.SaveChanges();
-            return true;
         }
     }
 }

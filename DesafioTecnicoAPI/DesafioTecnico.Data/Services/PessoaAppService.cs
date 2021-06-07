@@ -9,62 +9,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioTecnico.Data.Services
-{
-    public class PessoaAppService : IPessoaAppService
-    {
+namespace DesafioTecnico.Data.Services {
+    public class PessoaAppService : IPessoaAppService {
         private PessoaContext database;
 
-        public PessoaAppService(PessoaContext _database)
-        {
+        public PessoaAppService(PessoaContext _database) {
             this.database = _database;
         }
 
-        public bool AdicionaPessoa(Pessoa pessoa)
-        {
-            try
-            {
+        public bool AdicionarPessoa(Pessoa pessoa) {
+            try {
                 if (pessoa == null)
                     return false;
 
                 database.Add(pessoa);
                 database.SaveChanges();
                 return true;
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 throw e;
             }
         }
 
-        public Pessoa AdicionaRenda(int id, Renda renda)
-        {
-            Pessoa pessoa = BuscaPessoa(id);
-            pessoa.ValorRenda = renda;
-            database.SaveChanges();
-            return pessoa;
+        public Pessoa AdicionarRenda(int id, Renda renda) {
+            try {
+                Pessoa pessoa = BuscarPessoa(id);
+                pessoa.ValorRenda = renda;
+                database.SaveChanges();
+                return pessoa;
+            } catch (Exception e) {
+                throw e;
+            }
         }
 
-        public Pessoa BuscaPessoa(int id)
-        {
-            return database.Pessoa.Include(x => x.ValorRenda).FirstOrDefault(x => x.Id == id);
+        public Pessoa BuscarPessoa(int id) {
+            try {
+                return database.Pessoa.Include(x => x.ValorRenda).FirstOrDefault(x => x.Id == id);
+            } catch (Exception e) {
+                throw e;
+            }
         }
 
-        public List<Pessoa> BuscaTodasPessoas()
-        {
-            return database.Pessoa.Include(x => x.ValorRenda).ToList();
+        public List<Pessoa> BuscarTodasPessoas() {
+            try {
+                return database.Pessoa.Include(x => x.ValorRenda).ToList();
+            } catch (Exception e) {
+                throw e;
+            }
         }
 
-        public bool RemovePessoa(int id)
-        {
-            var pessoa = BuscaPessoa(id);
+        public bool RemoverPessoa(int id) {
+            try {
+                var pessoa = BuscarPessoa(id);
 
-            if (pessoa == null)
-                return false;
+                if (pessoa == null)
+                    return false;
 
-            database.Pessoa.Remove(pessoa);
-            database.SaveChanges();
-            return true;
+                database.Pessoa.Remove(pessoa);
+                database.SaveChanges();
+                return true;
+            } catch (Exception e) {
+                throw e;
+            }
         }
     }
 }

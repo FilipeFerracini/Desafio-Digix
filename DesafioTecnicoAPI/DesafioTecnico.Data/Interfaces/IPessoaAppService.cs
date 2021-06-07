@@ -10,10 +10,10 @@ namespace DesafioTecnico.Data.Interfaces
 {
     public interface IPessoaAppService
     {
-        List<Pessoa> BuscaTodasPessoas();
-        Pessoa BuscaPessoa(int id);
-        bool AdicionaPessoa(Pessoa pessoa);
-        bool RemovePessoa(int id);
-        Pessoa AdicionaRenda(int id, Renda valor);
+        List<Pessoa> BuscarTodasPessoas();
+        Pessoa BuscarPessoa(int id);
+        bool AdicionarPessoa(Pessoa pessoa);
+        bool RemoverPessoa(int id);
+        Pessoa AdicionarRenda(int id, Renda valor);
     }
 }

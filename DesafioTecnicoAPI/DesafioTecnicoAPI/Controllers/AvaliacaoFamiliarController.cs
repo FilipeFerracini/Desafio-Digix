@@ -19,18 +19,30 @@ namespace DesafioTecnicoAPI.Controllers {
 
         [HttpGet("ListarFamiliasValidasPontuadas")]
         public ActionResult<List<AvaliacaoFamiliarDto>> ListarFamiliasValidasPontuadas() {
-            return avaliacaoFamiliar.ListarFamiliasValidasPontuadas();
+            try {
+                return avaliacaoFamiliar.ListarFamiliasValidasPontuadas();
+            } catch (Exception e) {
+                return BadRequest();
+            }
         }
 
 
         [HttpPost("PontuarFamilia")]
         public ActionResult<AvaliacaoFamiliarDto> PontuarFamilia(int id) {
-            return avaliacaoFamiliar.PontuarFamilia(id);
+            try {
+                return avaliacaoFamiliar.PontuarFamilia(id);
+            } catch (Exception e) {
+                return BadRequest();
+            }
         }
 
         [HttpGet("ObterFamiliaContemplada")]
         public ActionResult<ContempladoDto> ObterFamiliaContemplada() {
-            return avaliacaoFamiliar.ObterFamiliaContemplada();
+            try {
+                return avaliacaoFamiliar.ObterFamiliaContemplada();
+            } catch (Exception e) {
+                return BadRequest();
+            }
         }
     }
 }
