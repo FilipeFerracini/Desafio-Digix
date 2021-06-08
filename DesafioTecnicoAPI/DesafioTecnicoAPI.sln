@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnicoAPI", "DesafioTecnicoAPI\DesafioTecnicoAPI.csproj", "{66612757-CB72-44A9-8ADB-46E41FD86D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioTecnicoAPI", "DesafioTecnicoAPI\DesafioTecnicoAPI.csproj", "{66612757-CB72-44A9-8ADB-46E41FD86D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnico.Data", "DesafioTecnico.Data\DesafioTecnico.Data.csproj", "{66AE21B3-9190-4576-BFB3-96BDFD3E7528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioTecnico.Data", "DesafioTecnico.Data\DesafioTecnico.Data.csproj", "{66AE21B3-9190-4576-BFB3-96BDFD3E7528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{E140B83B-C8A5-4082-A9E2-60D1A19FBAB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66AE21B3-9190-4576-BFB3-96BDFD3E7528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E140B83B-C8A5-4082-A9E2-60D1A19FBAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E140B83B-C8A5-4082-A9E2-60D1A19FBAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E140B83B-C8A5-4082-A9E2-60D1A19FBAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E140B83B-C8A5-4082-A9E2-60D1A19FBAB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
